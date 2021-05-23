@@ -15,8 +15,9 @@ const sequelize = new Sequelize(
   },
 )
 
-sequelize.authenticate() // TODO Logics
-  .then(() => console.log("Connected to DB"))
-  .catch(err => console.log(`Error: ${err}`));
+sequelize
+  .authenticate() // TODO Logics
+  .then(() => console.log('Connected to DB'))
+  .catch((err) => console.log(`Error: ${err}`))
 
 module.exports = sequelize // TODO Compilation

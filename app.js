@@ -10,7 +10,7 @@ app.use(express.json()) // TODO logics
 app.use('/api/auth', user)
 app.use(require('./middleware/validate-session'))
 app.use('/api/game', game)
-app.listen(process.env.SERVER_PORT, function () {
+app.listen(process.env.SERVER_PORT, () => {
   // TODO logics
   console.log(`App is listening on ${process.env.SERVER_PORT}`)
 })
