@@ -15,7 +15,7 @@ const sequelize = new Sequelize(
   },
 )
 
-sequelize.authenticate() // TODO Refactor
+sequelize.authenticate() // TODO Logics
   .then(() => console.log("Connected to DB"))
   .catch(err => console.log(`Error: ${err}`));
 

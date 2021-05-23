@@ -1,14 +1,16 @@
-const express = require('express')
-const app = express()
-const db = require('./db')
-const user = require('./controllers/usercontroller')
-const game = require('./controllers/gamecontroller')
+const express = require('express') // TODO Refactor
+const app = express() // TODO Refactor
+const db = require('./db') // TODO Refactor
+const user = require('./controllers/usercontroller') // TODO Refactor
+const game = require('./controllers/gamecontroller') // TODO Refactor
 
 db.sync()
-app.use(require('body-parser'))
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json()) // TODO logics
 app.use('/api/auth', user)
 app.use(require('./middleware/validate-session'))
 app.use('/api/game', game)
-app.listen(function () {
-  console.log('App is listening on 4000')
+app.listen(process.env.SERVER_PORT, function () {
+  // TODO logics
+  console.log(`App is listening on ${process.env.SERVER_PORT}`)
 })
